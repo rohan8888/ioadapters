@@ -1,0 +1,39 @@
+{
+  "mysql": {
+    "master": {
+      "connectionPoolLimit": 200,
+      "connectTimeout": 30000,
+      "database": "test",
+      "host": "localhost",
+      "password": "password",
+      "user": "admin"
+    },
+    "slave": {
+      "connectionPoolLimit": 200,
+      "connectTimeout": 30000,
+      "database": "test",
+      "host": "localhost",
+      "password": "password",
+      "user": "admin"
+    }
+  },
+  "redis": {
+    "instances": {
+      "default": {
+        "host": "localhost",
+        "port": 6379,
+        "name": "default",
+        "options": {
+          "db": 1,
+          "scaleReads": "slave"
+        },
+        "isCluster": 0
+      }
+    },
+    "connection": {
+      "retries": 5000,
+      "retryBackoff": 60000
+    },
+    "defaultExpiry": 432000
+  }
+}
