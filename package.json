@@ -6,12 +6,19 @@
   "repository": "git@github.com:rohan8888/ioadapters.git",
   "author": "Rohan awad <rohan@dream11.com>",
   "license": "MIT",
+  "scripts": {
+    "pretest": "eslint --ignore-path .gitignore .",
+    "test": "find ./test -name '*.js' | NODE_ENV=test xargs ./node_modules/mocha/bin/mocha -R spec",
+    "precommit": "pretty-quick --staged"
+  },
   "dependencies": {
     "async": "^2.6.1",
     "axios": "^0.18.0",
     "buffer": "^5.2.0",
+    "chai": "^4.1.2",
     "config": "^2.0.1",
     "ioredis": "^3.2.2",
+    "mocha": "^5.2.0",
     "mysql": "^2.16.0",
     "promise-mysql": "^3.3.1",
     "ramda": "^0.25.0",
