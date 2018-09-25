@@ -48,19 +48,17 @@ const getConnection = R.compose(
 	findConnection
 );
 
-const fromCache = (c, params) => {
-	return new Promise(async (resolve, reject) => {
-		let pc = promisify(c.get).bind(c);
-		const t1 = Date.now();
-		let result = await pc(params.key);
-		if (params['zipped'])
-			result = result
-				? zlib.inflateSync(new Buffer(result, 'hex')).toString('utf-8')
-				: null;
-		const t2 = Date.now();
-		console.log('get', params.key, t2 - t1, 'ms');
-		resolve(JSON.parse(result));
-	});
+const fromCache = async (c, params) => {
+	let pc = promisify(c.get).bind(c);
+	const t1 = Date.now();
+	let result = await pc(params.key);
+	if (params['zipped'])
+		result = result
+			? zlib.inflateSync(new Buffer(result, 'hex')).toString('utf-8')
+			: null;
+	const t2 = Date.now();
+	console.log('get', params.key, t2 - t1, 'ms');
+	return JSON.parse(result);
 };
 
 const toCache = (c, params) => {
@@ -74,10 +72,14 @@ const toCache = (c, params) => {
 	c.setex(key, expiry, value);
 };
 
+const delCache = (c, key) => c.del(key);
+
 const get = R.useWith(fromCache, [getConnection, R.identity]);
 const set = R.useWith(toCache, [getConnection, R.identity]);
+const del = R.useWith(delCache, [getConnection, R.identity]);
 
 module.exports = {
 	get,
-	set
+	set,
+	del
 };
