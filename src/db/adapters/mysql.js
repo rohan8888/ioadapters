@@ -31,11 +31,20 @@ const getQueryWithValues = R.compose(
 
 const useConnection = async function(pool, statement) {
 	let c = await pool.getConnection();
+	let result, errCatch;
 	const t1 = Date.now();
-	const result = await c.query(statement);
-	c.release();
+	try {
+		result = await c.query(statement);
+	} catch (err) {
+		errCatch = err;
+		console.log('[ERROR]', err, statement);
+	} finally {
+		c.release();
+	}
 	const t2 = Date.now();
-	console.log(statement, t2 - t1, 'ms');
+	console.log('[MySQL]', statement, t2 - t1, 'ms');
+	if (errCatch) throw errCatch;
+
 	return result;
 };
 
