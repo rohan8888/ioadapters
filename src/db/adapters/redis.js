@@ -57,7 +57,7 @@ const fromCache = async (c, params) => {
 			? zlib.inflateSync(new Buffer(result, 'hex')).toString('utf-8')
 			: null;
 	const t2 = Date.now();
-	console.log('get', params.key, t2 - t1, 'ms');
+	console.log('[Redis]', 'get', params.key, t2 - t1, 'ms');
 	return JSON.parse(result);
 };
 
