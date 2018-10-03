@@ -1,4 +1,7 @@
 # ioadapters
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/rohan8888/ioadapters.svg)](https://greenkeeper.io/)
+
 Adapters for various data stores
 
 ### Usage
