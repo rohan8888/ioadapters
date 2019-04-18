@@ -116,6 +116,11 @@ bignumber.js@4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-4.1.0.tgz#db6f14067c140bd46624815a7916c92d9b6c24b1"
 
+bignumber.js@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-6.0.0.tgz#bbfa047644609a5af093e9cbd83b0461fa3f6002"
+  integrity sha512-x247jIuy60/+FtMRvscqfxtVHQf8AGx2hm9c6btkgC0x/hp9yt+teISNhvF8WlwRkCc5yF2fDECH8SIMe8j+GA==
+
 bluebird@^3.5.0:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.2.tgz#1be0908e054a751754549c270489c1505d4ab15a"
@@ -861,11 +866,21 @@ mute-stream@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
 
-mysql@^2.14.1, mysql@^2.16.0:
+mysql@^2.14.1:
   version "2.16.0"
   resolved "https://registry.yarnpkg.com/mysql/-/mysql-2.16.0.tgz#b23b22ab5de44fc2d5d32bd4f5af6653fc45e2ba"
   dependencies:
     bignumber.js "4.1.0"
+    readable-stream "2.3.6"
+    safe-buffer "5.1.2"
+    sqlstring "2.3.1"
+
+mysql@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/mysql/-/mysql-2.17.0.tgz#f1e053eb6ec5ac5d521e63594c4405aaac43af96"
+  integrity sha512-BtsxHlxm5r0zJsM04NIq+vvn5YKMkq1AL9OMEu4kzeuOszYU6GC8ppQ8Yi7g7q3rHYgVS8otkMI7zToTPYvaKA==
+  dependencies:
+    bignumber.js "6.0.0"
     readable-stream "2.3.6"
     safe-buffer "5.1.2"
     sqlstring "2.3.1"
