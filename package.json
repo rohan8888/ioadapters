@@ -20,7 +20,7 @@
     "ioredis": "^4.0.0",
     "mocha": "^5.2.0",
     "mysql": "^2.16.0",
-    "promise-mysql": "^3.3.1",
+    "promise-mysql": "^4.1.2",
     "ramda": "^0.25.0",
     "zlib": "^1.0.5"
   },
