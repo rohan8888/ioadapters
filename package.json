@@ -17,7 +17,7 @@
     "buffer": "^5.2.0",
     "chai": "^4.1.2",
     "config": "^2.0.1",
-    "ioredis": "^4.0.0",
+    "ioredis": "^4.16.2",
     "mocha": "^5.2.0",
     "mysql": "^2.16.0",
     "promise-mysql": "^3.3.1",
